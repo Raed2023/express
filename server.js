@@ -18,17 +18,18 @@ const workingHours = (req, res, next) => {
 app.set('view engine', 'ejs');
 
 // Define routes
-app.get('/', workingHours, (req, res) => {
-  res.render('home', { title: 'Home' });
-});
+// app.get('/', workingHours, (req, res) => {
+//   res.render('home', { title: 'Home' });
+// });
 
-app.get('/Our services', workingHours, (req, res) => {
-  res.render('Our services', { title: 'Our Services' });
-});
+// app.get('/Our services', workingHours, (req, res) => {
+//   res.render('Our services', { title: 'Our Services' });
+// });
 
-app.get('/Contact us', workingHours, (req, res) => {
-  res.render('Contact us', { title: 'Contact Us' });
-});
+// app.get('/Contact us', workingHours, (req, res) => {
+//   res.render('Contact us', { title: 'Contact Us' });
+// });
+app.use(workingHours,express.static(path.join(__dirname,"content")))
 
 // Start the server
 const port = process.env.PORT || 3000;
